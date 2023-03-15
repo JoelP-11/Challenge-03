@@ -16,17 +16,39 @@ var includeNumericCharacters = confirm("Click OK to confirm including special nu
 var includeLowerCaseCharacters = confirm("Click OK to confirm including special lowercase Characters.");
 var includeUpperCaseCharacters = confirm("Click OK to confirm including special uppercase Characters.");
 
+if (!includeSpecialCharacters && !includeNumericCharacters && !includeLowerCaseCharacters && !includeUpperCaseCharacters) {
+  alert("At least one character type needs to be selected.");
+  return "";
 }
 
-var result = [];
-
-for (var i = 0; i < lengthOfPassword; i++) {
-  var randomIndex = Math.floor(Math.random() * lettersArr.length);
-  var randomNum = lettersArr[randomIndex];
-  result.push(randomNum);
+var allCharacters = [];
+if (includeSpecialCharacters) {
+  allCharacters = allCharacters.concat(specialCharacters);
+}
+if (includeNumericCharacters) {
+  allCharacters = allCharacters.concat(numericCharacters);
+}
+if (includeLowerCaseCharacters) {
+  allCharacters = allCharacters.concat(lowerCasedCharacters);
+}
+if (includeUpperCaseCharacters) {
+  allCharacters = allCharacters.concat(upperCaseCharacters);
 }
 
-console.log(result.join(""));
+
+
+
+
+var password = "";
+
+for (var i = 0; i < passwordLength; i++) {
+  var randomIndex = Math.floor(Math.random() * allCharacters.length);
+  password += allCharacters[randomIndex];
+}
+
+return password;
+}
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");

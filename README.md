@@ -4,4 +4,6 @@ In this challenge assignment I developed a password generator. The HTML and CSS 
 <img width="907" alt="image" src="https://user-images.githubusercontent.com/123904046/225256088-d72d8c2e-1939-4b50-a66e-de9b43b98f12.png">
 screenshot^
 
+https://joelp-11.github.io/Challenge-03/
+deployed app^^
 
